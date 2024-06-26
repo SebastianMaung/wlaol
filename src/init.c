@@ -225,23 +225,23 @@ void main_init_config( void )
 	
 	// Gameblabla
 #ifdef LINUX
-	char savepath[128];
+//	char savepath[128];
 	snprintf(basicpath, sizeof(basicpath), "%s", getenv("HOME"));
 	snprintf(configPath, sizeof(configPath), "%s/.config", basicpath);
 	snprintf(homepath, sizeof(homepath), "%s/.config/wlaol", basicpath);
-	snprintf(savepath, sizeof(savepath), "%s/.config/wlaol/save", basicpath);
+//	snprintf(savepath, sizeof(savepath), "%s/.config/wlaol/save", basicpath);
 	
 	if(access( configPath, F_OK ) == -1)  mkdir(configPath, 0755);
 	if(access( homepath, F_OK ) == -1)  mkdir(homepath, 0755);
-	if(access( savepath, F_OK ) == -1)  mkdir(savepath, 0755);
+//	if(access( savepath, F_OK ) == -1)  mkdir(savepath, 0755);
 #else
 	/* Empty */
 	snprintf(basicpath, sizeof(basicpath), "");
 	snprintf(configPath, sizeof(configPath), "");
 	snprintf(homepath, sizeof(homepath), "");
-	snprintf(savepath, sizeof(savepath), "save");
+//	snprintf(savepath, sizeof(savepath), "save");
 	
-	if(access( savepath, , F_OK ) == -1)  mkdir(savepath, 0755);
+//	if(access( savepath, , F_OK ) == -1)  mkdir(savepath, 0755);
 #endif
 	
 	if ( ! ( LoadGameFlag("save/config") == 0 ) )
